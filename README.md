@@ -21,6 +21,22 @@ Cotiza3D es una app web pensada para quienes ofrecen servicios de impresión 3D 
 
 > ¿Quieres instalarlo en otro equipo o compartir tus datos? Exporta un respaldo desde Configuración, copia el archivo y luego impórtalo en la otra instancia.
 
+### Instalación local paso a paso
+Si ya descargaste el repositorio (por clonación con Git o descomprimiendo un ZIP), sigue estos comandos en tu terminal:
+
+```bash
+# 1) Ubícate en la carpeta del proyecto (reemplaza la ruta si la moviste)
+cd Cotiza3D_open
+
+# 2) Instala las dependencias declaradas en package.json
+npm install
+
+# 3) Levanta el entorno de desarrollo en http://localhost:9002
+npm run dev
+```
+
+Para un uso productivo puedes compilar y ejecutar la app con `npm run build` seguido de `npm run start`.
+
 ## Cómo está organizada la navegación
 - `Dashboard`: métricas clave, progreso para recuperar inversiones y trabajos activos.
 - `Diseños`: biblioteca de modelos previa a crear presupuestos.
