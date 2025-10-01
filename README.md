@@ -1,52 +1,49 @@
-# Cotiza3D - Calculadora de Costos para Impresión 3D
+# Cotiza3D
 
-## ¿Cuál es el motivo del proyecto?
+Cotiza3D es una app web pensada para quienes ofrecen servicios de impresión 3D y necesitan sacar presupuestos claros sin enredarse con planillas. Todo vive en tu navegador, así que puedes seguir probando precios, guardar clientes o preparar nuevas inversiones sin crear cuentas ni depender de una nube externa.
 
-Cotiza3D es una aplicación web diseñada para ayudar a entusiastas y profesionales de la impresión 3D a calcular de manera precisa y sencilla los costos de sus trabajos. El objetivo principal es desglosar todos los factores que influyen en el precio final de una pieza impresa, permitiendo generar presupuestos justos, rentables y profesionales.
+## Lo que puedes hacer
+- **Dashboard en un vistazo:** resume ingresos, ganancia estimada, presupuestos pendientes y trabajos en curso. Además sugiere los próximos pasos para dejar la app lista.
+- **Diseños reutilizables:** registra modelos con materiales, tiempos y costos. Puedes convertir cualquier diseño en presupuesto con un par de clicks.
+- **Presupuestos completos:** arma cotizaciones detalladas, duplica versiones, controla estados (borrador, aceptado, en preparación, listo, entregado o cancelado) y genera precios en USD y en tu moneda local.
+- **Clientes organizados:** guarda datos de contacto, histórico de trabajos y el total comprado por cada uno.
+- **Insumos y máquinas:** administra filamentos, precios por kilo, impresoras, depreciación y consumo eléctrico para que los cálculos sean realistas.
+- **Inversiones y futuras compras:** registra equipos o mejoras, sigue qué porcentaje ya recuperaste y convierte tu lista de deseos en inversiones reales cuando las compres.
+- **Links útiles:** conserva referencias, tutoriales o tiendas asociadas a tu taller.
+- **Configuración y respaldo:** ajusta margen, mano de obra, tarifas eléctricas, moneda local y exporta/importa toda tu información en un archivo JSON.
 
-La aplicación resuelve la complejidad de tener que calcular manually costos variables como el desgaste de la máquina, el consumo de energía según la tarifa eléctrica, y la mano de obra, centralizando todo en una interfaz intuitiva y fácil de usar.
+## Cómo empezar (en palabras simples)
+1. **Instala Node.js 18 o superior**: al hacerlo también obtienes `npm`. Si ya lo tienes, sigue al paso 2.
+2. **Descarga el proyecto**: puedes clonarlo con Git o bajar el ZIP desde tu repositorio favorito.
+3. **Abre una terminal en la carpeta del proyecto** y ejecuta `npm install` para que se descarguen las dependencias.
+4. **Lanza la app con `npm run dev`**. Se abrirá en `http://localhost:9002`. Mantén la terminal abierta mientras la usas.
+5. **Guarda un acceso directo** a ese enlace en tu navegador para entrar rápido a tu panel.
 
-## Funcionalidades Principales
+> ¿Quieres instalarlo en otro equipo o compartir tus datos? Exporta un respaldo desde Configuración, copia el archivo y luego impórtalo en la otra instancia.
 
-Esta herramienta ha sido construida para ser un completo centro de operaciones para la gestión de costos de impresión 3D. A continuación se detallan sus características:
+## Cómo está organizada la navegación
+- `Dashboard`: métricas clave, progreso para recuperar inversiones y trabajos activos.
+- `Diseños`: biblioteca de modelos previa a crear presupuestos.
+- `Presupuestos`: tabla filtrable, estados, duplicación y totales por moneda.
+- `Clientes`: contactos con historial de piezas y montos.
+- `Insumos` y `Máquinas`: catálogos con vistas en tarjetas, edición rápida y eliminación segura.
+- `Inversiones`: seguimiento de capital invertido vs. ganancias generadas.
+- `Futuras Compras`: lista de deseos que puedes convertir en inversiones reales.
+- `Links`: repositorio de recursos y tiendas que usas a diario.
+- `Configuración`: parámetros globales y la sección de copia de seguridad/restauración.
 
-### 1. Dashboard Interactivo
-- **Visión General:** Ofrece un panel de control con métricas clave para entender rápidamente el estado de tu negocio.
-- **Métricas Relevantes:** Muestra ingresos totales, ganancia neta (basada en presupuestos aceptados), número de presupuestos aceptados y pendientes.
-- **Guía de Inicio Rápido:** Incluye una lista de pasos recomendados para que los nuevos usuarios configuren la aplicación correctamente.
+## Cuida tus datos
+- Todo se guarda en `localStorage`, por lo que tu información es privada y se queda en el navegador donde trabajas.
+- Si borras la caché, cambias de equipo o quieres compartir el proyecto, exporta previamente el respaldo (`JSON`) y luego impórtalo.
+- El archivo incluye materiales, máquinas, configuraciones, presupuestos, diseños, clientes, inversiones, listas de compras y links.
 
-### 2. Gestión de Presupuestos
-- **Creación y Edición:** Permite crear presupuestos detallados, especificando el cliente, los materiales, tiempos de impresión, costos de diseño y más.
-- **Estados de Presupuesto:** Cada presupuesto puede ser marcado como `Borrador`, `Aceptado` o `Cancelado`, permitiendo un seguimiento claro del flujo de trabajo.
-- **Filtros y Paginación:** La lista de presupuestos se puede filtrar por estado y está paginada para manejar un gran volumen de datos de forma ordenada.
-- **Cálculos Detallados:** Muestra el costo de producción y el precio final (con ganancia) tanto en USD como en la moneda local seleccionada.
+## Sigue construyendo
+Cotiza3D está pensada para que puedas adaptarla a tu flujo de trabajo. Algunas ideas:
+- Crea vistas personalizadas para tipos de impresión específicos (resina, SLS, etc.).
+- Añade más monedas o automatiza la cotización del tipo de cambio.
+- Integra recordatorios con tu calendario o herramientas CRM.
 
-### 3. Gestión de Insumos (Materiales)
-- **Catálogo de Filamentos:** Administra una lista de todos tus filamentos (PLA, PETG, ABS, etc.).
-- **Costo por Kilogramo:** Define el costo por kg de cada material, que se usará como base para los cálculos de los presupuestos.
-- **Interfaz de Grilla:** Visualiza tus materiales en una moderna vista de tarjetas para una fácil identificación.
-
-### 4. Gestión de Máquinas
-- **Inventario de Impresoras:** Mantén un registro de todas tus impresoras 3D.
-- **Costos Asociados:** Para cada máquina, puedes definir:
-  - **Costo de Depreciación por Hora:** Para contabilizar el desgaste y mantenimiento.
-  - **Consumo de Energía (Watts):** Para calcular el costo eléctrico de cada impresión.
-
-### 5. Configuración General
-- **Parámetros de Costos:** Ajusta valores globales como el costo de mano de obra por hora y el margen de ganancia deseado.
-- **Tarifas Eléctricas:** Configura el costo de la energía (kWh) según tu proveedor, incluyendo tarifas para horarios "Punta" y "Fuera de Punta".
-- **Moneda Local:** Selecciona tu moneda local para que la aplicación muestre los totales convertidos automáticamente usando una tasa de cambio actualizada.
-
-### 6. Copia de Seguridad y Restauración
-- **Exportación Total:** Exporta todos tus datos (presupuestos, máquinas, insumos y configuración) a un único archivo `JSON` con un solo clic.
-- **Importación Segura:** Restaura tus datos desde un archivo de respaldo. La aplicación te advertirá que esta acción sobrescribirá todos los datos actuales para evitar pérdidas accidentales.
-
-## ¿Cómo funciona?
-
-Toda la información que manejas en **Cotiza3D se almacena localmente en tu navegador** usando `localStorage`. Esto significa que tus datos son privados y no se envían a ningún servidor externo. La ventaja es que la aplicación es rápida y funciona sin necesidad de una conexión a internet constante, pero es importante que realices copias de seguridad periódicas usando la función de exportación, especialmente si planeas limpiar el caché de tu navegador o cambiar de computadora.
+Si quieres profundizar en la parte técnica, estructura del código y cómo colaborar, revisa `docs/technical-overview.md`.
 
 ## Autor
-
-Este proyecto fue creado por **Daniel Facelli**. Si tienes alguna consulta o quieres conectar, puedes encontrarme en LinkedIn:
-
-[https://www.linkedin.com/in/danielfacelli/](https://www.linkedin.com/in/danielfacelli/)
+Proyecto creado por **Daniel Facelli**. Conecta en LinkedIn: [https://www.linkedin.com/in/danielfacelli/](https://www.linkedin.com/in/danielfacelli/)
